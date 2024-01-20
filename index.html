@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@350&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div class="traveling-light"></div>
+<body>
+  <div class="neon-background">
+    <div id="openBtn" onclick="openSlider()">☰</div>
+    <div id="slider">&nbsp;
+      <button onclick="closeSlider()" class="x">X</button>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="t.css">
+</head>
+<body>
+    <div id="desktopContent">
+    <div class="system-info">
+      <p id="cpuSpeed">CPU Speed: Loading...</p>
+      <div class="chart-container">
+        <canvas id="cpuSpeedChart" style="height: 180px;"></canvas>
+      </div>
+      <p id="processor" style="display:none">Processor: Loading...</p>
+      <p id="ram">RAM: Loading...</p>
+      <div class="chart-container">
+        <canvas id="ramChart" style="height: 180px;"></canvas>
+      </div>
+      <p id="storage" style="display:none;">Storage: Loading...</p>
+      <div class="chart-container" style="display:none;">
+        <canvas id="storageChart" style="height: 180px;"></canvas>
+      </div>
+      <p id="displaySize">Display Size: Loading...</p>
+      <div class="chart-container">
+        <canvas id="displaySizeChart" style="height: 200px;"></canvas>
+      </div>
+      <p id="architecture">Architecture: Loading...</p>
+      <div class="chart-container">
+        <canvas id="architectureChart" style="height: 100px;"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="items"><br>
+	<button onclick="showArticle(1)" class="button">
+    <span>GOOGLE</span>
+</button>&nbsp;&nbsp;&nbsp;
+<button onclick="showArticle(2)" class="button"><span>GAMES </span></button>&nbsp;&nbsp;&nbsp;
+<button onclick="showArticle(3)" class="button"><span>OVER SCAR</span></button>
+<br><br><br><br><br><br>
+<div id="article1" class="article" style="display: block;">
+<form action="https://www.google.com/search" method="GET">
+        <div class="input-container">
+            <img src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png" alt="Icon" class="icons">
+            <input type="text" placeholder="Search..." onfocus="removePlaceholder(this)" name="query">
+            <button type="submit"><img src="https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png" style="width: 15px;"></button>
+        </div>
+    </form>
+</div>
+<div id="article2" class="article">
+  <button id="myButton" onclick="openModal()">
+    <div class="searchbox">
+    <div id="search-box">
+        <input type="text" id="search" oninput="searchTitles()" placeholder="Search" class="srh">
+    </div>
+    <div id="results"></div>
+    <div id="hidden-content">
+     <h2 id="hidden-title"></h2>
+     <div id="hidden-post"></div>
+</div>
+</div>
+</div>
+<div id="article3" class="article">
+    <h2>Coming Soon...</h2>
+    <p>Programmers Work On This Page.</p>
+      <p>May be this page is PAID.</p>
+</div>
+</div>
+<div id="plusIcon" onclick="showAddSiteForm()"><img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/plus-512.png" style="width: 29px"></div>
+  <div id="addedSitesContainer"></div>
+  <div id="popup">
+    <span onclick="closePopup()" style="cursor: pointer; position: absolute; top: 10px; right: 10px; font-size: 20px;">&times;</span>
+    <input type="text" id="popupName" placeholder="NAME:" class="int" onfocus="removePlaceholder(this)">
+    <br><br>
+    <input type="text" id="popupUrl" placeholder="URL:" class="int" onfocus="removePlaceholder(this)"> 
+    <br><br>
+    <input type="text" id="popupIconUrl" placeholder="Icon URL:" class="int" onfocus="removePlaceholder(this)">
+    <br><br>
+    <button onclick="addSiteFromPopup()" class="add">Add Site</button>
+  </div>
+</div>
+    <script src="file.js"></script>
+    <script src="script.js"></script>
+    <script src="slider.js"></script>
+    <script src="Quick Link.js"></script>
+    <script src="link.js"></script>
+</body>
+</html>

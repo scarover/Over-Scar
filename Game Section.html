@@ -1,0 +1,255 @@
+<style>
+    * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        @media screen and (max-width: 600px) {
+            .srh {
+                margin-left: 70px;
+                margin-top: 14px;
+                width: 240px;
+            }
+            .nextimg{
+                width: 20px;
+                margin-left: 320px;
+            }
+            .next{
+                margin-top: -45px;
+            }
+            .h4 {
+                margin-left: 72px;
+                margin-top: 16px;
+            }
+
+            .compiler {
+                margin-left: 70px;
+                display: flex;
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            .compiler1 {
+                margin-left: 160px;
+                display: flex;
+                margin-top: -60px;
+                text-align: center;
+            }
+
+            .compiler2 {
+                margin-left: 260px;
+                display: flex;
+                margin-top: -60px;
+                text-align: center;
+            }
+        }
+
+        .h2 {
+            color: #FFF;
+            text-align: center;
+            margin-top: 8px;
+            font-size: 40px;
+            font-family: 'Silkscreen';
+            animation: glow-frame 5s ease-in-out infinite;
+        }
+
+        @keyframes glow-frame {
+            0% { color: #FF2700; }
+            25% { color: #FF9B00; }
+            50% { color: #FFE400; }
+            75% { color: #00FFF7; }
+            100% { color: #0032FF; }
+        }
+
+        .htmlimg {
+            width: 40px;
+        }
+
+        .a {
+            text-decoration: none;
+        }
+
+        .compiler {
+            display: flex;
+        }
+
+        .html {
+            font-size: 10px;
+            color: #fff;
+            margin-top: 5px;
+        }
+
+        .srh {
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #000;
+            outline: none;
+            margin-top: 60px;
+            background-color: transparent;
+        }
+
+        #hidden-content img {
+            max-width: 100%;
+            width: 150px;
+            margin-left: 45px;
+            display: flex;
+            margin-top: 10px;
+            border-radius: 10px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        #hidden-content {
+            width: 40%;
+            margin-left: 100px;
+            display: none;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+            margin: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .btnh {
+            margin-top: 20px;
+        }
+
+        #results {
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        .pt {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 10px;
+        }
+        .result-title {
+            cursor: pointer;
+            padding: 8px;
+            border: 1px solid #000;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            color: #fff;
+            width: 240px;
+            margin-left: 60px;
+            background-color: #333;
+            transition: background-color 0.3s;
+        }
+        @media screen and (max-width: 600px) {
+            #hidden-content {
+                width: 240px;
+                margin-left: 65px;
+            }
+
+            .pt {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-top: 10px;
+            }
+
+            .at {
+                padding: 8px;
+                border: 1px solid;
+                border-image: linear-gradient(45deg, orange, purple) 1;
+                text-decoration: none;
+                margin-top: 5px;
+                margin-left: 69px;
+                color: #000;
+            }
+
+            .at:hover {
+                color: #FFF;
+                border: none;
+                background: linear-gradient(45deg, purple, orange);
+            }
+            .next{
+                text-align: right;
+                margin-right: 20px;
+            }
+        }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@350&display=swap" rel="stylesheet">
+<div class="searchbox">
+    <div id="search-box">
+        <input type="text" id="search" oninput="searchTitles()" placeholder="Search" class="srh">
+    </div>
+    <div id="results"></div>
+    <div id="hidden-content">
+     <h2 id="hidden-title"></h2>
+     <div id="hidden-post"></div>
+</div>
+</div>
+</div>
+    <script>
+        const data = {
+            "GTA VC": {
+                post: "Grand Theft Auto: Vice City is a 2002 action-adventure game developed by Rockstar North and published by Rockstar Games.",
+                image: "https://upload.wikimedia.org/wikipedia/en/c/ce/Vice-city-cover.jpg",
+                url: "GTA_Vice_City.html"
+            },
+            "GTA V": {
+                post: "Post content for Title 2",
+                image: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
+                url: "https://example.com/link2"
+            },
+            "BGMI": {
+                post: "Post content for Title 3",
+                image: "https://play-lh.googleusercontent.com/DYXNS7NyuIgbCk5ElbK2Ch7dNuUnnCJ2ToDsV0QK0Q-MiGWQR7oDl9w8VXGinA5ureA=w240-h480-rw",
+                url: "https://example.com/link3"
+            },
+            "FREE FIRE": {
+                post: "Post content for Title 4",
+                image: "https://example.com/image4.jpg",
+                url: "https://example.com/link4"
+            }
+        };
+        function searchTitles() {
+        const searchInput = document.getElementById("search").value.toLowerCase();
+        const resultsContainer = document.getElementById("results");
+        const hiddenContent = document.getElementById("hidden-content");
+
+        // Check if the search input is empty
+        if (searchInput === "") {
+            resultsContainer.innerHTML = ""; // Clear previous results
+            hiddenContent.style.display = "none"; // Hide hidden content
+            return;
+        }
+
+        resultsContainer.innerHTML = ""; // Clear previous results
+
+        Object.keys(data).forEach(title => {
+            const lowerCaseTitle = title.toLowerCase();
+            if (lowerCaseTitle.includes(searchInput)) {
+                const resultTitle = document.createElement("div");
+                resultTitle.classList.add("result-title");
+                resultTitle.textContent = title;
+                resultTitle.onclick = () => showHiddenContent(title);
+                resultsContainer.appendChild(resultTitle);
+            }
+        });
+    }
+
+    function showHiddenContent(title) {
+        const hiddenContent = document.getElementById("hidden-content");
+        const hiddenTitle = document.getElementById("hidden-title");
+        const hiddenPost = document.getElementById("hidden-post");
+        hiddenTitle.textContent = title;
+        hiddenPost.innerHTML = `
+            <p class="pt"><b>${data[title].post}</b></p>
+            <img src="${data[title].image}" alt="Image for ${title}">
+            <p class="btnh"><a href="${data[title].url}" target="_blank" class="at">Read more</a></p><br>
+        `;
+        hiddenContent.style.display = "block";
+    }
+    </script>

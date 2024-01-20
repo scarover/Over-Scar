@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <form id="loginForm" action="https://script.google.com/macros/s/AKfycbylbGWpub0XhfhOjCR-TsKrXUvYRugICUnz4gvLEOC1wZ8PberIbLs8Mlq_kiGeKNl_/exec" method="POST">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            checkPassword();
+        });
+
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+
+            // Create a FormData object to send the password via POST request
+            var formData = new FormData();
+            formData.append('password', password);
+
+            // Send a POST request to the server
+            fetch('https://script.google.com/macros/s/AKfycbylbGWpub0XhfhOjCR-TsKrXUvYRugICUnz4gvLEOC1wZ8PberIbLs8Mlq_kiGeKNl_/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(redirectUrl => {
+                if (redirectUrl !== 'Invalid password!') {
+                    window.location.href = redirectUrl;
+                } else {
+                    alert('Invalid password! Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
