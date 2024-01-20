@@ -74,7 +74,7 @@ const data = {
         hiddenPost.innerHTML = `
             <p class="pt"><b>${data[title].post}</b></p>
             <img src="${data[title].image}" alt="Image for ${title}">
-            <p class="btnh"><a href="${data[title].url}" class="at">Read more</a></p><br>
+            <p class="btnh"><a href="${data[title].url}" class="at">Try Now</a></p><br>
         `;
         hiddenContent.style.display = "block";
     }
